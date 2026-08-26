@@ -1,0 +1,7 @@
+interface:
+  display_name: "Don't Let Their Designer Know"
+  short_description: "Create bilingual speculative luxury object posters"
+  default_prompt: "Use $dont-let-their-designer-know on the attached photo; with no additional instructions, immediately run the full English-and-Simplified-Chinese six-image workflow with all defaults and save the final artifacts to output/."
+
+policy:
+  allow_implicit_invocation: true

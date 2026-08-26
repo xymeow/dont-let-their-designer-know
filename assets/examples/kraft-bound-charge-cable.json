@@ -1,0 +1,158 @@
+{
+  "outputBaseName": "kraft-bound-charge-cable",
+  "defaultFormat": "landscape",
+  "subject": {
+    "kind": "inanimate-object",
+    "name": "kraft-bound USB-A to USB-C charging cable",
+    "livingPresence": "none"
+  },
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "layout": {
+    "imagePanePercent": 68,
+    "overlayHeightPercent": 35,
+    "productTopGap": 220,
+    "factsTopGap": 68
+  },
+  "image": {
+    "src": "kraft-bound-charge-cable-product.png",
+    "position": "50% 50%"
+  },
+  "theme": {
+    "railBackground": "#f3f3f0",
+    "imageBackground": "#ececed",
+    "overlayBackground": "rgba(248, 248, 245, 0.68)",
+    "ink": "#161819",
+    "mutedInk": "#5e6263",
+    "manifestoInk": "#303435",
+    "ctaBackground": "#161819",
+    "ctaInk": "#f0f1ef",
+    "productNameSize": 72,
+    "manifestoSize": 84,
+    "priceSize": 48
+  },
+  "formats": {
+    "landscape": {},
+    "portrait": {
+      "canvas": {
+        "width": 1080,
+        "height": 1350
+      },
+      "layout": {
+        "portraitImageHeightPercent": 58,
+        "portraitBlockSide": "right",
+        "portraitBlockInset": 44,
+        "portraitBlockWidth": 430,
+        "portraitFactsTopGap": 26
+      },
+      "image": {
+        "position": "50% 50%"
+      },
+      "theme": {
+        "portraitOverlayBackground": "rgba(248, 248, 245, 0.84)",
+        "productNameSize": 58,
+        "manifestoSize": 46,
+        "priceSize": 36
+      },
+      "variants": {
+        "zh-CN": {
+          "theme": {
+            "productNameSize": 68,
+            "manifestoSize": 50
+          }
+        }
+      }
+    },
+    "story": {
+      "canvas": {
+        "width": 1080,
+        "height": 1920
+      },
+      "layout": {
+        "portraitImageHeightPercent": 65,
+        "portraitBlockSide": "right",
+        "portraitBlockInset": 72,
+        "portraitBlockWidth": 390,
+        "portraitFactsTopGap": 26
+      },
+      "image": {
+        "position": "50% 50%"
+      },
+      "theme": {
+        "portraitOverlayBackground": "rgba(248, 248, 245, 0.84)",
+        "productNameSize": 58,
+        "manifestoSize": 40,
+        "priceSize": 36
+      },
+      "variants": {
+        "zh-CN": {
+          "theme": {
+            "productNameSize": 68,
+            "manifestoSize": 44
+          }
+        }
+      }
+    }
+  },
+  "variants": {
+    "en": {
+      "image": {
+        "alt": "A matte-black USB-A to USB-C charging cable folded into a tall loop and held by a blank raw-kraft paper band"
+      },
+      "product": {
+        "name": "KRAFT-BOUND\nCHARGING CABLE",
+        "category": "POWER ACCESSORY",
+        "price": "$1,690",
+        "color": "CARBON BLACK / NATURAL BROWN",
+        "material": "MOLDED THERMOPLASTIC\nUNCOATED PAPERBOARD / METAL",
+        "care": [
+          "DO NOT RELEASE FROM PAPER BAND",
+          "KEEP PAPER BAND DRY",
+          "WIPE TERMINALS WITH A SOFT DRY CLOTH"
+        ]
+      },
+      "copy": {
+        "manifesto": "REACH,\nWITHHELD.",
+        "objectNote": [
+          "An ordinary charging cable fixed in its pre-use loop.",
+          "Reach disappears; both endpoints remain."
+        ]
+      },
+      "cta": "ADD TO BAG"
+    },
+    "zh-CN": {
+      "image": {
+        "alt": "由原色纸束固定成长环的哑黑 USB-A 转 USB-C 充电线"
+      },
+      "layout": {
+        "productTopGap": 212
+      },
+      "product": {
+        "name": "纸束充电线",
+        "category": "充电配件",
+        "price": "$1,690",
+        "color": "炭黑 / 原纸棕",
+        "material": "模压热塑性塑料\n未涂布纸板 / 金属",
+        "care": [
+          "请勿拆除纸束",
+          "纸束须保持干燥",
+          "使用柔软干布擦拭接头"
+        ]
+      },
+      "copy": {
+        "manifesto": "长度，\n暂不展开。",
+        "objectNote": [
+          "一根普通充电线被永久固定在拆封前的环形中。",
+          "可伸展的距离消失，只留下两端。"
+        ]
+      },
+      "cta": "加入购物袋",
+      "theme": {
+        "productNameSize": 86,
+        "manifestoSize": 88
+      }
+    }
+  }
+}

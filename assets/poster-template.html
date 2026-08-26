@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="{{LANG}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width={{CANVAS_WIDTH}}, initial-scale=1" />
+    <title>{{DOCUMENT_TITLE}}</title>
+    <style>
+      :root {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: {{INK}};
+        background: {{RAIL_BACKGROUND}};
+        font-synthesis: none;
+        text-rendering: geometricPrecision;
+      }
+
+      * { box-sizing: border-box; }
+
+      html,
+      body {
+        width: {{CANVAS_WIDTH}}px;
+        height: {{CANVAS_HEIGHT}}px;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      body[data-locale^="zh"] {
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      }
+
+      .poster {
+        display: grid;
+        grid-template-columns: {{IMAGE_PANE_PERCENT}}% 1fr;
+        width: 100%;
+        height: 100%;
+        background: {{RAIL_BACKGROUND}};
+      }
+
+      .image-stage {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        background: {{IMAGE_BACKGROUND}};
+      }
+
+      .product-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: {{IMAGE_POSITION}};
+      }
+
+      .manifesto-veil {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 290px;
+        align-items: end;
+        gap: 48px;
+        height: {{OVERLAY_HEIGHT_PERCENT}}%;
+        padding: 34px 38px 30px 30px;
+        background: {{OVERLAY_BACKGROUND}};
+      }
+
+      .manifesto {
+        max-width: 760px;
+        margin: 0;
+        color: {{MANIFESTO_INK}};
+        font-size: {{MANIFESTO_SIZE}}px;
+        font-weight: 460;
+        letter-spacing: -0.065em;
+        line-height: 0.87;
+        white-space: pre-line;
+      }
+
+      .object-note {
+        align-self: end;
+        max-width: 260px;
+        padding-bottom: 6px;
+        color: {{MANIFESTO_INK}};
+        font-size: 14px;
+        line-height: 1.36;
+      }
+
+      .object-note p { margin: 0 0 12px; }
+
+      .catalog-rail {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        padding: 50px 50px 40px;
+        background: {{RAIL_BACKGROUND}};
+      }
+
+      .project-mark {
+        margin: 0;
+        color: {{MUTED_INK}};
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      .product-block { margin-top: {{PRODUCT_TOP_GAP}}px; }
+
+      .product-name {
+        margin: 0;
+        color: {{INK}};
+        font-size: {{PRODUCT_NAME_SIZE}}px;
+        font-weight: 760;
+        letter-spacing: -0.07em;
+        line-height: 0.84;
+        white-space: pre-line;
+      }
+
+      .category {
+        margin: 22px 0 0;
+        color: {{MUTED_INK}};
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .facts {
+        display: grid;
+        gap: 24px;
+        margin: {{FACTS_TOP_GAP}}px 0 0;
+      }
+
+      .fact {
+        display: grid;
+        grid-template-columns: 135px minmax(0, 1fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .fact dt {
+        margin: 2px 0 0;
+        color: {{MUTED_INK}};
+        font-size: 13px;
+        letter-spacing: 0.05em;
+      }
+
+      .fact dd {
+        margin: 0;
+        color: {{INK}};
+        font-size: 16px;
+        font-weight: 680;
+        line-height: 1.25;
+        white-space: pre-line;
+      }
+
+      .rail-footer { margin-top: auto; }
+
+      .safety-disclaimer {
+        margin: 0 0 6px;
+        color: {{INK}};
+        font-size: 12px;
+        font-weight: 780;
+        letter-spacing: 0.055em;
+        line-height: 1.35;
+      }
+
+      .project-disclaimer {
+        margin: 0 0 17px;
+        color: {{MUTED_INK}};
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        line-height: 1.35;
+      }
+
+      .cta {
+        display: grid;
+        place-items: center;
+        height: 84px;
+        color: {{CTA_INK}};
+        background: {{CTA_BACKGROUND}};
+        font-size: 15px;
+        font-weight: 740;
+        letter-spacing: 0.08em;
+      }
+
+      body[data-locale^="zh"] .project-mark,
+      body[data-locale^="zh"] .category,
+      body[data-locale^="zh"] .fact dt,
+      body[data-locale^="zh"] .cta {
+        letter-spacing: 0.04em;
+      }
+
+      body[data-locale^="zh"] .project-mark { font-size: 17px; }
+
+      body[data-locale^="zh"] .category { font-size: 18px; }
+
+      body[data-locale^="zh"] .fact dt {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      body[data-locale^="zh"] .fact dd {
+        font-size: 18px;
+        line-height: 1.35;
+      }
+
+      body[data-locale^="zh"] .object-note {
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      body[data-locale^="zh"] .project-disclaimer {
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      body[data-locale^="zh"] .safety-disclaimer {
+        font-size: 14px;
+        letter-spacing: 0.035em;
+      }
+
+      body[data-locale^="zh"] .cta { font-size: 17px; }
+
+      body[data-locale^="zh"] .product-name {
+        letter-spacing: -0.055em;
+        line-height: 0.94;
+      }
+
+      body[data-locale^="zh"] .manifesto {
+        letter-spacing: -0.045em;
+        line-height: 0.98;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .poster {
+        grid-template-columns: 1fr;
+        grid-template-rows: {{PORTRAIT_IMAGE_HEIGHT_PERCENT}}% minmax(0, 1fr);
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .image-stage {
+        grid-row: 1;
+        grid-column: 1;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .manifesto-veil {
+        top: {{PORTRAIT_BLOCK_INSET}}px;
+        right: auto;
+        bottom: auto;
+        left: {{PORTRAIT_BLOCK_INSET}}px;
+        display: block;
+        width: {{PORTRAIT_BLOCK_WIDTH}}px;
+        max-width: {{PORTRAIT_BLOCK_MAX_WIDTH}}px;
+        height: auto;
+        padding: 26px 28px 24px;
+        background: {{PORTRAIT_OVERLAY_BACKGROUND}};
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .manifesto {
+        max-width: none;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .object-note {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        max-width: none;
+        margin-top: 18px;
+        padding: 0;
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .object-note p {
+        margin: 0;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-block-side="right"] .manifesto-veil {
+        right: {{PORTRAIT_BLOCK_INSET}}px;
+        left: auto;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .catalog-rail {
+        grid-row: 2;
+        grid-column: 1;
+        padding: 28px 42px 32px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .project-mark {
+        font-size: 12px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .product-block {
+        margin-top: 20px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .product-name {
+        line-height: 0.88;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .category {
+        margin-top: 12px;
+        font-size: 14px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 34px;
+        margin-top: {{PORTRAIT_FACTS_TOP_GAP}}px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .fact {
+        display: block;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .fact dt {
+        margin: 0 0 7px;
+        font-size: 11px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .fact dd {
+        font-size: 14px;
+        line-height: 1.28;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .project-disclaimer {
+        margin-bottom: 12px;
+        font-size: 9px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .safety-disclaimer {
+        font-size: 13px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"]) .cta {
+        height: 64px;
+        font-size: 13px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .project-mark {
+        font-size: 14px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .category {
+        font-size: 16px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .fact dt {
+        font-size: 13px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .fact dd {
+        font-size: 16px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .object-note {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        font-size: 14px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .project-disclaimer {
+        font-size: 11px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .safety-disclaimer {
+        font-size: 15px;
+      }
+
+      body:is([data-format="portrait"], [data-format="story"])[data-locale^="zh"] .cta {
+        font-size: 15px;
+      }
+
+      body[data-format="story"] .catalog-rail {
+        padding: 32px 64px 92px;
+      }
+
+      body .facts .fact.fact-price {
+        display: block;
+      }
+
+      body .facts .fact.fact-price dt {
+        margin: 0 0 9px;
+        color: {{INK}};
+        font-weight: 700;
+      }
+
+      body .facts .fact.fact-price dd {
+        font-size: {{PRICE_SIZE}}px;
+        font-weight: 780;
+        letter-spacing: -0.055em;
+        line-height: 0.92;
+      }
+    </style>
+  </head>
+  <body data-locale="{{LOCALE}}" data-format="{{FORMAT}}" data-block-side="{{PORTRAIT_BLOCK_SIDE}}">
+    <main class="poster" aria-label="{{DOCUMENT_TITLE}} catalog poster">
+      <section class="image-stage">
+        <img class="product-image" src="{{IMAGE_DATA_URL}}" alt="{{IMAGE_ALT}}" />
+        <div class="manifesto-veil">
+          <h2 class="manifesto">{{MANIFESTO}}</h2>
+          <div class="object-note">{{OBJECT_NOTE_HTML}}</div>
+        </div>
+      </section>
+
+      <aside class="catalog-rail">
+        <p class="project-mark">{{PROJECT_MARK}}</p>
+        <div class="product-block">
+          <h1 class="product-name">{{PRODUCT_NAME}}</h1>
+          <p class="category">{{CATEGORY}}</p>
+        </div>
+
+        <dl class="facts">
+          <div class="fact fact-price"><dt>{{PRICE_LABEL}}</dt><dd>{{PRICE}}</dd></div>
+          <div class="fact"><dt>{{COLOR_LABEL}}</dt><dd>{{COLOR}}</dd></div>
+          <div class="fact"><dt>{{MATERIAL_LABEL}}</dt><dd>{{MATERIAL}}</dd></div>
+          <div class="fact"><dt>{{CARE_LABEL}}</dt><dd>{{CARE}}</dd></div>
+        </dl>
+
+        <div class="rail-footer">
+          <p class="safety-disclaimer">{{SAFETY_DISCLAIMER}}</p>
+          <p class="project-disclaimer">{{PROJECT_DISCLAIMER}}</p>
+          <div class="cta">{{CTA}}</div>
+        </div>
+      </aside>
+    </main>
+  </body>
+</html>

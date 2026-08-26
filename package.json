@@ -1,0 +1,13 @@
+{
+  "name": "dont-let-their-designer-know",
+  "version": "1.0.0",
+  "private": true,
+  "license": "CC-BY-NC-4.0",
+  "type": "module",
+  "scripts": {
+    "render:example": "node scripts/render-poster.mjs --spec assets/examples/kraft-bound-charge-cable.json --out-dir assets/examples",
+    "render:example:portrait": "node scripts/render-poster.mjs --spec assets/examples/kraft-bound-charge-cable.json --out-dir assets/examples --format portrait",
+    "render:example:story": "node scripts/render-poster.mjs --spec assets/examples/kraft-bound-charge-cable.json --out-dir assets/examples --format story",
+    "render:example:html": "node scripts/render-poster.mjs --spec assets/examples/kraft-bound-charge-cable.json --out-dir assets/examples --html-only"
+  }
+}

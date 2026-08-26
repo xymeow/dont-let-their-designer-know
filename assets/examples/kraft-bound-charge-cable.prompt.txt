@@ -1,0 +1,39 @@
+Built-in image generation mode
+Edit target: kraft-bound-charge-cable-source.jpg (user-supplied Photo 1.jpg)
+
+PASS 1 — DIRECT PRODUCT RESTAGING
+
+Use case: precise-object-edit
+Asset type: square text-free master product image for a noncommercial luxury-catalog parody poster
+Input images: Image 1 is the edit target and sole subject reference.
+
+Primary request: isolate only the black USB-A to USB-C cable held by the plain kraft-paper sleeve in Image 1 and restage that exact ordinary object as a single collectible design object. Remove the original tabletop, furniture, plastic packaging, floor, and all incidental surroundings. Preserve the object's real, slightly improvised retail presentation rather than redesigning it.
+
+Source lock — preserve these non-negotiable facts:
+- one thick matte-black USB-A to USB-C cable folded into a tall, narrow elongated loop with several parallel cable runs
+- the small metal USB-C plug remains near the upper center, attached to a black molded connector housing
+- the metal USB-A plug remains near the lower-left/low-center area, attached to a larger black molded connector housing
+- both black connector housings retain their raised diamond crosshatch grip texture and ribbed strain relief
+- one wide, unprinted raw-brown kraft paper sleeve wraps horizontally around the middle of the folded cable
+- the sleeve retains its plain fibrous texture, straight rectangular edges, subtle vertical overlap/seam near the center, and slight real-world asymmetry
+- cable topology and all physical connections remain plausible; do not invent, duplicate, remove, or swap plugs
+
+Scene/backdrop: seamless luminous pale cool-grey studio field with enough contrast to reveal every black cable edge; no décor, visible corner, horizon line, prop, or pedestal.
+Style/medium: photorealistic deadpan high-fashion catalog photography; severe, quiet, industrial, commercially precise.
+Composition/framing: square 1:1 master image; near-frontal, very slightly three-quarter presentation if needed for material depth; orient the elongated loop vertically; visual center at 50% width and 50% height. Keep the entire cable, both plugs, kraft sleeve, gaps between cable runs, and grounding shadow fully visible. The subject should occupy about 62–66% of frame height and remain deliberately smaller than a conventional ecommerce hero, with at least 16% clean breathing room around its full silhouette. Compose so it can crop cleanly to landscape 16:9, portrait-feed image stage, and narrow 9:16 story image stage without losing the defining silhouette. No aggressive crop.
+Lighting/mood: large diffused key light, quiet ambient fill, precise subtle highlights on metal plugs, and a soft low-contrast contact shadow directly beneath/slightly behind the cable; grounded but not bottom-heavy or theatrical.
+Color palette: preserve matte black rubber, raw natural kraft brown, and neutral metal; pale cool-grey background.
+Materials/textures: faithfully preserve inexpensive molded thermoplastic, real cable rubber, fibrous uncoated kraft paper, and metal contacts; show manufacturing detail and minor imperfection.
+Constraints: change only setting, lighting, and presentation; keep the inanimate object immediately recognizable; no people; no animals; no living subjects; no words; no labels; no logos; no trademarks; no watermark.
+Avoid: oversized subject, cramped edges, bottom-weighted crop, pure-white highlight clipping, black edges disappearing into background, long dramatic shadows, gold plating, beige lifestyle interior, decorative pedestal, luxury redesign, braided cable, invented components, false symmetry, excessive gloss, surreal melting, generated typography.
+
+PASS 2 — SCALE AND CENTERING CORRECTION
+
+Use case: precise-object-edit
+Asset type: final square text-free master product image for a noncommercial luxury-catalog parody poster
+Input images: use the immediately preceding generated product image as the edit target.
+
+Primary request: make exactly one composition correction only. Scale the entire cable-and-kraft-sleeve object down uniformly so its full silhouette, including the grounding shadow, occupies about 64% of the square frame height. Recenter its visual mass at 50% width and 49% height. Preserve at least 16–18% clean pale cool-grey breathing room on every side so the master can survive landscape, portrait-feed, and narrow story crops.
+
+Invariants: keep the exact same black USB-A to USB-C cable geometry and topology; same vertical elongated folded loop; same number and placement of cable runs; same USB-C plug at upper center; same USB-A plug at lower-left/low-center; same raised diamond crosshatch connector grips and ribbed strain relief; same wide blank raw-kraft paper sleeve, fibrous texture, central seam, rectangular edges, and slight asymmetry; same materials, colors, near-frontal viewpoint, pale cool-grey seamless studio background, diffused lighting, metal highlights, and soft low-contrast contact shadow. Change only overall subject scale and centering. Keep all details sharp and photorealistic.
+Constraints: no people, animals, décor, pedestal, words, labels, logos, trademarks, watermark, invented parts, crop, redesign, dramatic shadow, or excessive gloss.
