@@ -24,6 +24,14 @@ Source photo → productized image:
 | --- | --- |
 | ![English kraft-bound charging cable poster](assets/examples/kraft-bound-charge-cable.en.png) | ![中文纸束充电线海报](assets/examples/kraft-bound-charge-cable.zh-CN.png) |
 
+## ChatGPT Lite
+
+Use it directly: [open **Don't Let Their Designer Know** in ChatGPT](https://chatgpt.com/g/g-6835710d0b688191b3bf4e1b7139da06-don-t-let-their-designer-know). Upload one ordinary-object photo without typing a prompt.
+
+For a simpler upload-and-generate experience, paste [`chatgpt/GPT_INSTRUCTIONS.md`](chatgpt/GPT_INSTRUCTIONS.md) into a Custom GPT's Instructions. When a user attaches one photo without typing anything, it immediately makes two standalone 16:9 landscape posters: one English and one Simplified Chinese. It never creates a bilingual composite. Both posters share the same observed facts, concept, and absurd price, while each language gets native, cold, over-serious luxury copy instead of a literal translation.
+
+The Lite workflow uses prompting to approximate the full Skill's landscape structure: a 68% image stage, a translucent veil over the lower 35% of that stage, and a 32% paper-white catalog rail. It uses a low-saturation color field, a faint gradient, and soft shadows for the image background, and requires an obviously absurd price. It defaults to PNG and supplies JPG/JPEG when the user explicitly requests it. It does not create collages, portrait, Story, HTML, JSON, or ZIP outputs. The full Skill keeps the six-image bilingual workflow and editable HTML layouts described below. See [`chatgpt/README.md`](chatgpt/README.md) for setup, testing, and known limits.
+
 ## What it makes
 
 One source photo becomes one text-free product image and six finished catalog images:

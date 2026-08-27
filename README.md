@@ -24,6 +24,14 @@ Agent 按照这个 Skill，把一张普通物件照片制作成六张中英双�
 | --- | --- |
 | ![英文纸束充电线海报](assets/examples/kraft-bound-charge-cable.en.png) | ![中文纸束充电线海报](assets/examples/kraft-bound-charge-cable.zh-CN.png) |
 
+## ChatGPT 轻量版
+
+直接使用：[在 ChatGPT 中打开 **Don't Let Their Designer Know**](https://chatgpt.com/g/g-6835710d0b688191b3bf4e1b7139da06-don-t-let-their-designer-know)。上传一张普通物件照片即可，不需要输入文字。
+
+如果你更想要「丢一张图，直接出图」的体验，可以把 [`chatgpt/GPT_INSTRUCTIONS.md`](chatgpt/GPT_INSTRUCTIONS.md) 粘贴到 Custom GPT 的 Instructions。用户只附一张照片、不输入文字时，它会直接生成两张独立的 16:9 横版海报：英文一张、简体中文一张，不做双语合版。两张海报共享同一物件事实、概念与离谱价格，但分别使用自然的本地语言创作冷淡、故作深沉的大牌文案，而不是逐字翻译。
+
+轻量版会用 Prompt 尽量还原完整 Skill 的横版骨架：68% 商品图场、图场下部 35% 半透明信息幕和 32% 纸白商品栏。它使用低饱和色块、轻微渐变与柔和阴影构成冷淡编辑背景，并要求明显荒谬的价格。默认输出 PNG；用户明确要求时，再提供 JPG/JPEG。它不会生成拼图、竖版、Story、HTML、JSON 或 ZIP。完整 Skill 仍保留下面的中英双语六图工作流和可编辑 HTML 排版。配置方法、测试清单和已知限制见 [`chatgpt/README.md`](chatgpt/README.md)。
+
 ## 生成内容
 
 一张原始照片会生成一张无文字产品图和六张目录成图：
