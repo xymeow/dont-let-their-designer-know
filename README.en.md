@@ -4,6 +4,8 @@ English | [简体中文](README.md)
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-777777.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
+**Play online:** [upload one photo and generate the paired English and Chinese parody posters →](https://chatgpt.com/g/g-6835710d0b688191b3bf4e1b7139da06-don-t-let-their-designer-know)
+
 > “People pay for this? At that price?”
 >
 > “You wouldn’t understand. It’s art.”
@@ -28,9 +30,9 @@ Source photo → productized image:
 
 Use it directly: [open **Don't Let Their Designer Know** in ChatGPT](https://chatgpt.com/g/g-6835710d0b688191b3bf4e1b7139da06-don-t-let-their-designer-know). Upload one ordinary-object photo without typing a prompt.
 
-For a simpler upload-and-generate experience, paste [`chatgpt/GPT_INSTRUCTIONS.md`](chatgpt/GPT_INSTRUCTIONS.md) into a Custom GPT's Instructions. When a user attaches one photo without typing anything, it immediately makes two standalone 16:9 landscape posters: one English and one Simplified Chinese. It never creates a bilingual composite. Both posters share the same observed facts, concept, and absurd price, while each language gets native, cold, over-serious luxury copy instead of a literal translation.
+For a simpler upload-and-generate experience, paste [`chatgpt/GPT_INSTRUCTIONS.md`](chatgpt/GPT_INSTRUCTIONS.md) into a Custom GPT's Instructions. When a user attaches one photo without typing anything, it makes two independent image calls in sequence: one English-only 16:9 poster, then one Simplified-Chinese-only 16:9 poster. It does not request batch variants or create a bilingual composite. Both posters share the same observed facts, concept, and absurd price, while each language gets native, cold, over-serious luxury copy instead of a literal translation.
 
-The Lite workflow uses prompting to approximate the full Skill's landscape structure: a 68% image stage, a translucent veil over the lower 35% of that stage, and a 32% paper-white catalog rail. It uses a low-saturation color field, a faint gradient, and soft shadows for the image background, and requires an obviously absurd price. It defaults to PNG and supplies JPG/JPEG when the user explicitly requests it. It does not create collages, portrait, Story, HTML, JSON, or ZIP outputs. The full Skill keeps the six-image bilingual workflow and editable HTML layouts described below. See [`chatgpt/README.md`](chatgpt/README.md) for setup, testing, and known limits.
+The Lite workflow keeps only the full Skill's most recognizable landscape structure: a large product photograph on the left, a paper-white catalog rail on the right, and a translucent information veil near the lower left. The rail always shows size, material, color, use, and care. Use and care replace the object's normal purpose with absurd restrictions that make it feel too expensive to use; the lower-left veil keeps the fact-based philosophical copy. The project name or `DLTDK` appears in the upper right as a small regular-weight brand easter egg, while the non-affiliation line remains a footer annotation. To stay quick and playful, it skips complex validation, automatic rework, and pixel-perfect layout checks. The full Skill keeps the six-image bilingual workflow and editable HTML layouts described below. See [`chatgpt/README.md`](chatgpt/README.md) for setup, quick testing, and known limits.
 
 ## What it makes
 
